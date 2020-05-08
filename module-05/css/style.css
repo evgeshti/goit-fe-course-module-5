@@ -3,7 +3,7 @@
 * {
   margin: 0px;
   padding: 0px;
-  box-sizing: inherit;
+  /* box-sizing: inherit; */
 }
 
 html {
@@ -45,12 +45,6 @@ img {
   clear: both;
 }
 
-.navigation_title {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.52), rgba(0, 0, 0, 0.52)),
-    url(../img/slide4.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
 /* Logo */
 
 .logo {
@@ -106,12 +100,11 @@ h1::first-letter {
   color: #1abc9c;
 }
 
-.navigation_title {
-  text-align: center;
-  padding: 220px 0px 282px 0px;
+.slider_buttons {
+  position: relative;
 }
 
-.navigation_title_h2 {
+.slider_title_h2 {
   font-size: 24px;
   font-weight: 300;
   text-transform: uppercase;
@@ -123,39 +116,292 @@ h1::first-letter {
   line-height: 82px;
 }
 
-.navigation_title_h2::before {
-  content: "";
-  display: block;
-  border-bottom: 104px solid rgba(78, 198, 171, 0.65);
-  width: 104px;
-  float: left;
-  background-image: url(../img/left.png);
-  background-repeat: no-repeat;
-  background-position-x: center;
-  background-position-y: center;
-  margin: auto;
-}
-
-.navigation_description {
+.slider_description {
   color: #ffffff;
   font-family: "Roboto";
   font-weight: 300;
   letter-spacing: -0.48px;
   line-height: 54px;
   text-transform: uppercase;
-  text-align: left;
-  padding-left: 182px;
 }
 
-.navigation_description::after {
+.slider_element {
+  position: relative;
+}
+
+.slider_img {
+  filter: brightness(52%);
+  margin: 0 auto;
+}
+
+.slider_buttons {
+  width: 1130px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+}
+
+.button_slider_left {
+  display: block;
+  background-color: rgba(78, 198, 171, 0.65);
+  border: none;
+  height: 104px;
+  width: 104px;
+  background-image: url(../img/left.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  float: left;
+}
+
+.button_slider_right {
   content: "";
   display: block;
-  border-bottom: 104px solid rgba(78, 198, 171, 0.65);
+  background-color: rgba(78, 198, 171, 0.65);
+  border: none;
+  height: 104px;
   width: 104px;
-  float: right;
   background-image: url(../img/right.png);
   background-repeat: no-repeat;
-  background-position-x: center;
-  background-position-y: center;
+  background-position: center;
+  float: right;
+}
+
+.button_slider_left:hover,
+.button_slider_right:hover {
+  background-color: rgba(78, 198, 171, 1);
+}
+
+.wrap_description {
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 740px;
+}
+
+/* secton 2 "New Collection" */
+
+.new_collection {
+  padding-top: 120px;
+  background-color: #e9f0fd;
+}
+
+h2 {
+  margin-bottom: 10px;
+  color: #515151;
+  font-size: 48px;
+  text-transform: uppercase;
+  letter-spacing: -0.96px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400px;
+}
+
+.f-prod {
+  padding: 0px;
+}
+
+.wrap-image {
+  width: 255px;
+  height: 280px;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  position: relative;
+}
+
+.h2-title {
+  text-align: center;
+  margin-bottom: 120px;
+}
+
+.h2-title::after {
+  content: "";
+  display: block;
+  border-bottom: 164px solid #1abc9c;
+  border-width: 7px;
+  width: 200px;
   margin: auto;
+  padding-top: 32px;
+}
+
+li {
+  list-style-type: none;
+}
+
+h3 {
+  margin: 0px;
+}
+
+.product-line {
+  background-color: #323232;
+  color: #fff;
+  height: 40px;
+}
+
+.prod {
+  float: left;
+  margin-right: 30px;
+  margin-bottom: 100px;
+}
+
+.prod:nth-child(4n) {
+  margin-right: 0px;
+}
+
+.product {
+  float: left;
+  padding: 12px 0px 12px 14px;
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 400px;
+  text-transform: uppercase;
+  letter-spacing: -0.36px;
+}
+
+.prod:hover .product-line {
+  background-color: #1abc9c;
+}
+
+.product-price {
+  float: right;
+  margin: 0px;
+  color: #ffffff;
+  background-color: rgba(250, 250, 250, 0.5);
+  padding: 10px 10px 10px 10px;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  font-weight: 400px;
+  text-transform: uppercase;
+  letter-spacing: -0.36px;
+}
+
+.div_collection {
+  background-color: rgb(232, 239, 253);
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 10px solid rgba(255, 255, 255, 0.5);
+  background-clip: padding-box;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.prod:hover .overlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+.card_but_left {
+  display: inline-block;
+  background-color: inherit;
+  border: 1px solid white;
+  height: 50px;
+  width: 50px;
+  background-image: url(../img/heart.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.card_but_left:hover,
+.card_but_right:hover,
+.card_but_center:hover,
+.card_but_addbuy:hover {
+  background-color: rgba(78, 198, 171, 0.65);
+}
+
+.card_but_center {
+  display: inline-block;
+  background-color: inherit;
+  border: 1px solid white;
+  height: 50px;
+  width: 50px;
+  background-image: url(../img/arrow.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.card_but_right {
+  display: inline-block;
+  background-color: inherit;
+  border: 1px solid white;
+  height: 50px;
+  width: 50px;
+  background-image: url(../img/clock.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.card_but_addbuy {
+  display: inline-block;
+  background-color: inherit;
+  border: 1px solid white;
+  height: 50px;
+  width: 158px;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-image: url(../img/cart.png);
+  background-repeat: no-repeat;
+  background-position: 8px 8px;
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 400px;
+  text-transform: uppercase;
+  letter-spacing: -0.36px;
+  padding-left: 28px;
+}
+
+.card_buttons {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+}
+
+/* Footer */
+
+.footer {
+  width: 100%;
+  height: 88px;
+  text-align: center;
+  margin: 0 auto;
+  background-color: #323232;
+  color: #fefefe;
+  font-family: "Open Sans";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.all_rights {
+  color: #fefefe;
+  letter-spacing: -0.32px;
+  font-family: "Open Sans";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  width: 1130px;
+  margin: 0 auto;
+  padding-top: 30px;
+}
+
+.theme_graph {
+  color: #46bfa9;
+  letter-spacing: -0.32px;
+  font-family: "Open Sans";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  display: inline-block;
 }
